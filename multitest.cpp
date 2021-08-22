@@ -1,4 +1,4 @@
-#include "~/aravis/src/arv.h"
+#include "arv.h"
 #include <stdlib.h>
 #include <stdio.h>
 
