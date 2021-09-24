@@ -17,7 +17,7 @@
 
             camera = arv_camera_new (NULL, &error);
 
-            arv_camera_set_exposure_time(camera, exposure_time, &error)
+            arv_camera_set_exposure_time(camera, exposure_time, &error);
             buffer = arv_camera_acquisition (camera, 0, &error);
             if (ARV_IS_BUFFER (buffer)){
                     printf ("Image successfully acquired\n");
