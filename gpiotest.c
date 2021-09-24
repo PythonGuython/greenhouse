@@ -1,6 +1,7 @@
 #include <wiringPi.h>
 #include <stdio.h>
 
+#define LedPin 0
 int main(){
 
     if (wiringPiSetup() == -1) {
@@ -10,5 +11,7 @@ int main(){
     else{
     printf("wiring setup successful");
     }
+    
+    
     return 0;
 }
