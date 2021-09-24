@@ -1,1 +1,1 @@
-sudo gcc -I/home/pi/aravis/src -I/usr/include/glib-2.0/ -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include/ -I/usr/local/include/aravis-0.8 -L/home/pi/aravis/src/.libs/ -laravis-0.8 -lglib-2.0 -lgobject-2.0 -lpng acquire.c -o save-png3
+sudo gcc -I/home/pi/aravis/src -I/usr/include/glib-2.0/ -I/usr/lib/arm-linux-gnueabihf/glib-2.0/include/ -I/usr/local/include/aravis-0.8 -L/home/pi/aravis/src/.libs/ -laravis-0.8 -lglib-2.0 -lgobject-2.0 -lpng acquire.c -o acquire
