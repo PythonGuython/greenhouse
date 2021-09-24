@@ -4,6 +4,8 @@
     #include <stdlib.h>
     #include <stdio.h>
 
+    double exposure_time = 1000; //in us
+
     void arv_save_png(ArvBuffer * buffer, const char * filename);
 
     int main (int argc, char **argv)
@@ -14,7 +16,8 @@
             GError *error = NULL;
 
             camera = arv_camera_new (NULL, &error);
-            printf(arv_camera_get_model_name (camera, &error));
+
+            arv_camera_set_exposure_time(camera, exposure_time, &error)
             buffer = arv_camera_acquisition (camera, 0, &error);
             if (ARV_IS_BUFFER (buffer)){
                     printf ("Image successfully acquired\n");
