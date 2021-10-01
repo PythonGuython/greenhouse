@@ -3,12 +3,28 @@
     #include <arv.h>
     #include <stdlib.h>
     #include <stdio.h>
+    #include <pigpio.h>
 
     double exposure_time = 1000; //in us
 
+    //function references
     void arv_save_png(ArvBuffer * buffer, const char * filename);
+    int acquire_frame();
 
     int main (int argc, char **argv)
+    {
+        
+        if (gpioInitialise() < 0)
+        {
+            printf("pigpio initialise failed/n");
+            return -1;
+        }
+        
+        acquire_frame();
+        
+    }
+
+    int acquire_frame()
     {
             ArvCamera *camera;
             ArvBuffer *buffer;
@@ -32,6 +48,7 @@
 
             return EXIT_SUCCESS;
     }
+    
 
 
 
