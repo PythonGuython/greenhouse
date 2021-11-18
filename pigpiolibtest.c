@@ -18,13 +18,15 @@ int main()
         return -1;
     }
     
-    gpioSetMode(27, PI_OUTPUT);
+    gpioSetMode(17, PI_OUTPUT);
     gpioSetPWMfrequency(27, 8000);
-    gpioPWM(27,14);
-    while(1){
-        
-    }
-    
+    gpioPWM(17,14);
+    int c;
+    puts ("Enter q to quit");
+    do {
+        c=getchar();
+        putchar (c);
+    } while (c != 'q');
     gpioTerminate();
 
     return 0;

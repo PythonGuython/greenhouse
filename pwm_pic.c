@@ -6,7 +6,7 @@
 #include <pigpio.h>
 #include <unistd.h>
 
-    double exposure_time = 100000; //in us
+    double exposure_time = 76000; //in us
 
     //function references
     void arv_save_png(ArvBuffer * buffer, const char * filename);
@@ -56,6 +56,9 @@
                 
             arv_camera_set_exposure_time(camera, exposure_time, &error);
             
+            printf("exposure: %f", arv_camera_get_exposure_time (camera,
+                              &error));
+            
             buffer = arv_camera_acquisition (camera, 0, &error);
             if (ARV_IS_BUFFER (buffer)){
                     printf ("Image successfully acquired\n");
@@ -65,8 +68,7 @@
             }else{
                     printf ("Failed to acquire a single image\n");
             }
-            printf("exposure: %f", arv_camera_get_exposure_time (camera,
-                              &error));
+            
             g_clear_object (&camera);
             g_clear_object (&buffer);
 
