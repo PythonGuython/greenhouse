@@ -56,11 +56,13 @@ all:	acquire
 
 acquire: acquire.c
 	$(CC)    $(DEBUGFLG) $(GTK_CFLAGS) $(GTK_LIBS) acquire.c
-	$(CCLD)  $(LDFLAGS) $(LDADD) -o acquire acquire.o
+	$(CC)    $(DEBUGFLG) $(GTK_CFLAGS) $(GTK_LIBS) tiffstuff.c
+	$(CCLD)  $(LDFLAGS) $(LDADD) -o acquire tiffstuff.o acquire.o
 
 
 # The 'clean' target: It removes all intermediate files, such as .o files
 
 clean:
 	rm -f *.o
+	rm -f acquire
 
